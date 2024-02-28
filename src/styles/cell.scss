@@ -1,0 +1,14 @@
+.cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.white{
+        background-color: #ffffff5d;
+    }
+
+    &.black{
+        background-color: #0000004d;
+    }
+}
+

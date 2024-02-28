@@ -1,0 +1,12 @@
+.board{
+    --cell-size: 12vmin;
+    --cell-gap: 1px;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, var(--cell-size));
+    grid-template-rows: repeat(8, var(--cell-size));
+    gap: var(--cell-gap);
+    padding: 1px;
+    background-image: url(../assets/board-bg.jpg);
+}
