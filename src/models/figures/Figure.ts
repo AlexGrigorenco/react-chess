@@ -1,6 +1,7 @@
 import { Cell } from "../Cell";
 import { Colors } from "../Colors";
 import { v4 as uuidv4 } from 'uuid';
+import logo from '../../assets/white-rook.png'
 
 export enum FigureNames {
  FIGURE = 'фигура',
@@ -14,7 +15,7 @@ export enum FigureNames {
 
 export class Figure {
     color: Colors;
-    logo: string | null;
+    logo: typeof logo | null;
 
     cell: Cell;
     name: FigureNames;
