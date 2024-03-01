@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import { Cell } from "../models/Cell";
 
 interface CellProps {
@@ -7,7 +7,9 @@ interface CellProps {
 
 const CellComponent: FC<CellProps> = ({ cell }) => {
   return <div className={["cell", cell.color].join(" ")}>
-    
+
+    {cell.figure as ReactNode}
+
   </div>;
 };
 
