@@ -1,6 +1,7 @@
 import { Board } from "./Board";
 import { Colors } from "./Colors";
 import { Figure } from "./figures/Figure";
+import { v4 as uuidv4 } from 'uuid';
 
 export class Cell {
 
@@ -12,7 +13,7 @@ export class Cell {
 
     board: Board;
     available: Boolean;
-    id: number;
+    id: string;
 
     constructor(board: Board, x: number, y: number, color: Colors, figure: Figure | null){
         this.x = x;
@@ -21,6 +22,6 @@ export class Cell {
         this.figure = figure;
         this.board = board;
         this.available = false;
-        this.id = Math.random();
+        this.id = uuidv4();
     }
 }
