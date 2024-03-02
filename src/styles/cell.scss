@@ -10,5 +10,16 @@
     &.black{
         background-color: #ffffff1d;
     }
+
+    img{
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+        transition: .3s linear;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
 }
 

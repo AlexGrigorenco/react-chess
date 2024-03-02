@@ -1,7 +1,7 @@
 import { Cell } from "../Cell";
 import { Colors } from "../Colors";
 import { v4 as uuidv4 } from 'uuid';
-import logo from '../../assets/white-rook.png'
+import logo from '../../assets/white-rook.png';
 
 export enum FigureNames {
  FIGURE = 'фигура',
@@ -28,5 +28,13 @@ export class Figure {
         this.logo = null;
         this.name = FigureNames.FIGURE;
         this.id = uuidv4();
+    }
+
+    canMove(target: Cell) : boolean {
+        return true;
+    }
+
+    moveFigure(target: Cell){
+        
     }
 }
