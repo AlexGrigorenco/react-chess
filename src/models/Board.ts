@@ -29,6 +29,32 @@ export class Board {
     return this.cells[x][y];
   }
 
+  public highlightCells(selectedCell: Cell | null){
+    for(let i = 0; i < 8; i++){
+      const row = this.cells[i];
+      for(let j = 0; j < 8; j++){
+        const target = row[j];
+        target.available = !!selectedCell?.figure?.canMove(target);
+      }
+    }
+  }
+
+  public removeHighlightCells(){
+    for(let i = 0; i < 8; i++){
+      const row = this.cells[i];
+      for(let j = 0; j < 8; j++){
+        const target = row[j];
+        target.available = false;
+      }
+    }
+  }
+
+  public getCopyBoard(): Board{
+    const newBoard = new Board();
+    newBoard.cells = this.cells;
+    return newBoard;
+  }
+
   private addKings() {
     new King(Colors.WHITE, this.getCell(0, 4));
     new King(Colors.BLACK, this.getCell(7, 4));

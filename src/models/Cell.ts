@@ -24,4 +24,13 @@ export class Cell {
         this.available = false;
         this.id = uuidv4();
     }
+
+    public moveFigure(target: Cell){
+        if(this.figure && this.figure?.canMove(target)){
+            this.figure.moveFigure(target);
+            target.figure = this.figure;
+            this.figure = null;
+        }
+        this.board.removeHighlightCells();
+    }
 }

@@ -1,4 +1,5 @@
 .cell{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,6 +18,16 @@
         img{
             transform: scale(1.4);
         }
+    }
+    &.available::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #00800057;
+        cursor: pointer;
     }
 
     img{
